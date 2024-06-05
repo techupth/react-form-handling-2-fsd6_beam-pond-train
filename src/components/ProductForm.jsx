@@ -5,6 +5,7 @@ function ProductForm() {
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
   const submitHandler = () => {
+    event.preventDefault();
     const data = {
       name: name,
       image: image,
@@ -12,7 +13,10 @@ function ProductForm() {
       description: description,
     };
     alert(JSON.stringify(data));
-    // };
+    setName("");
+    setImage("");
+    setPrice("");
+    setDescription("");
   };
   return (
     <form className="post-form" onSubmit={submitHandler}>
